@@ -1,0 +1,63 @@
+--1st Stage 
+CREATE TABLE friends(
+id INTEGER,
+name TEXT,
+age INTEGER
+);
+INSERT INTO friends(id,name,age)
+VALUES(1, 'Jane Doe', 29);
+SELECT * 
+FROM friends;
+INSERT INTO friends(id,name,age)
+VALUES(2, 'Daniel Aguado', 27);
+INSERT INTO friends(id,name,age)
+VALUES(3, 'Blanca Rosado', 28);
+SELECT * 
+FROM friends;
+UPDATE friends 
+SET name='Jane Smith'
+WHERE id=1;
+SELECT * 
+FROM friends;
+ALTER TABLE friends
+ADD COLUMN email TEXT;
+SELECT * 
+FROM friends;
+UPDATE friends 
+SET email='janesmith@gmail.com'
+WHERE id=1;
+UPDATE friends 
+SET email='danhio@gmail.com'
+WHERE id=2;
+UPDATE friends 
+SET email='b.a.r.g.@gmail.com'
+WHERE id=3;
+SELECT * 
+FROM friends;
+DELETE FROM friends
+WHERE 1 IS id;
+SELECT * 
+FROM friends;
+--2nd Stage
+--install SQLite for Windows,MacOS and Linux at https://www.codecademy.com/courses/learn-sql/articles/what-is-sqlite
+--about SQLite page https://www.sqlite.org/index.html
+--another article to clarify some concepts https://www.codecademy.com/content-items/8f0c407f439676d91cd3733a394c720e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
