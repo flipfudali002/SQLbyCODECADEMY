@@ -1,0 +1,81 @@
+--Start
+SELECT *
+FROM fake_apps;
+--Count
+SELECT COUNT(*)
+FROM table_name;
+--
+ SELECT COUNT(*) 
+ FROM fake_apps
+ WHERE price=0;
+ --Sum
+ SELECT SUM(downloads)
+FROM fake_apps;
+--
+SELECT SUM(downloads)
+FROM fake_apps;
+--Max/Min
+SELECT MAX(downloads)
+FROM fake_apps;
+--
+SELECT MIN(downloads)
+FROM fake_apps;
+--
+SELECT MAX(price)
+FROM fake_apps;
+--Average 
+SELECT AVG(downloads)
+FROM fake_apps;
+--
+SELECT AVG(price)
+FROM fake_apps; 
+--Round
+SELECT ROUND(price, 0)
+FROM fake_apps;
+--
+SELECT ROUND(AVG(price), 2)
+FROM fake_apps;
+--Group by I
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 1999;
+--
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 2000;
+--
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 2001;
+--
+SELECT category,
+	SUM(downloads)
+FROM fake_apps
+GROUP BY category;
+--Group by II
+SELECT ROUND(imdb_rating),
+   COUNT(name)
+FROM movies
+GROUP BY ROUND(imdb_rating)
+ORDER BY ROUND(imdb_rating);
+--
+SELECT ROUND(imdb_rating),
+   COUNT(name)
+FROM movies
+GROUP BY ROUND(imdb_rating)
+ORDER BY ROUND(imdb_rating);
+--Having 
+SELECT year,
+   genre,
+   COUNT(name)
+FROM movies
+GROUP BY 1, 2
+HAVING COUNT(name) > 10;
+--
+SELECT price, 
+   ROUND(AVG(downloads)),
+   COUNT(*)
+FROM fake_apps
+GROUP BY price
+HAVING COUNT(name) > 10;
+--End of lecture 
